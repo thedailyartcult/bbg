@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Better Books & Garments</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* === EXACT SAME STYLES AS INDEX.HTML === */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --oxblood:     #6B1E2E;
+      --gold:        #C4A882;
+      --vellum:      #F5F0E8;
+      --bone:        #EDE8DC;
+      --surface:     #FDFAF5;
+      --ink:         #1C1713;
+      --ink-faded:   #7A6E62;
+      --green:       #2C3B2D;
+      --border:      #D9D2C3;
+      --error:       #A63228;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--surface);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* TYPE, UTILITY, BUTTONS, INPUT, LAYOUT, HOUSE BAR, NAV, FOOTER, etc. */
+    /* (I'm keeping it short here — copy all the styles from your index.html) */
+    .t-display { font-family: 'Cormorant Garamond', serif; font-size: clamp(52px, 8vw, 96px); font-weight: 300; line-height: 0.95; letter-spacing: -2px; font-style: italic; }
+    .t-xl { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 4vw, 48px); font-weight: 400; line-height: 1.1; letter-spacing: -0.8px; }
+    .t-lg { font-family: 'Cormorant Garamond', serif; font-size: clamp(22px, 2.5vw, 30px); font-weight: 400; line-height: 1.2; letter-spacing: -0.3px; }
+    .t-body { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 400; line-height: 1.75; letter-spacing: 0.01em; }
+    .t-body-sm { font-family: 'Cormorant Garamond', serif; font-size: 15px; font-weight: 400; line-height: 1.65; }
+    .t-label { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; }
+    .t-label-md { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 400; letter-spacing: 0.15em; text-transform: uppercase; }
+    .t-nav { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; }
+    .t-pull { font-family: 'Cormorant Garamond', serif; font-size: clamp(22px, 3vw, 34px); font-weight: 300; font-style: italic; line-height: 1.45; color: var(--oxblood); }
+
+    .container { max-width: 1320px; margin: 0 auto; padding: 0 40px; }
+    @media (max-width: 768px) { .container { padding: 0 20px; } }
+
+    /* House Bar */
+    #house-bar {
+      background: var(--ink); color: var(--surface); padding: 9px 40px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    #house-bar a { color: var(--gold); text-decoration: none; }
+
+    /* Nav */
+    #nav {
+      position: sticky; top: 0; z-index: 100; background: var(--surface);
+      border-bottom: 1px solid var(--border); height: 64px;
+      display: flex; align-items: center;
+    }
+    #nav .inner { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+    #nav .wordmark { font-family: 'Cormorant Garamond', serif; font-size: 15px; font-weight: 600; letter-spacing: 0.04em; color: var(--ink); text-decoration: none; }
+    #nav .links { display: flex; gap: 36px; align-items: center; }
+    #nav .links a { text-decoration: none; color: var(--ink-faded); }
+    #nav .links a:hover, #nav .links a.active { color: var(--ink); }
+
+    /* Main Content Styles */
+    .about-hero {
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 0 100px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .mission-section, .philosophy-section {
+      padding: 120px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .ruled-column {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 80px;
+    }
+    @media (max-width: 900px) {
+      .ruled-column { grid-template-columns: 1fr; gap: 40px; }
+    }
+
+    footer { background: var(--ink); color: var(--surface); padding: 72px 0 40px; }
+    /* ... (you can copy the rest of the footer, reveal, etc. from index.html) */
+  </style>
+</head>
+<body>
+
+  <!-- HOUSE BAR -->
+  <div id="house-bar">
+    <span class="t-label c-gold" style="opacity:0.7">An Imprint of The Daily Art Cult</span>
+    <a href="https://thedailyartcult.lol" target="_blank" class="t-label">Visit the House ↗</a>
+  </div>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <div class="container inner">
+      <a href="index.html" class="wordmark">Better Books & Garments</a>
+      <div class="links">
+        <a href="index.html" class="t-nav">Archive</a>
+        <a href="about.html" class="t-nav active">About</a>
+        <a href="#registry" class="t-nav">Registry</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="about-hero">
+    <div class="container">
+      <div style="max-width: 720px;">
+        <span class="t-label c-muted">Since 2026</span>
+        <h1 class="t-display" style="margin: 32px 0 48px;">
+          We publish for those<br>who still believe in slowness.
+        </h1>
+        <p class="t-body" style="max-width: 520px; font-size: 19px;">
+          Better Books & Garments is a quiet rebellion against disposability — in both literature and clothing.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION -->
+  <section class="mission-section">
+    <div class="container">
+      <div class="ruled-column">
+        <div>
+          <span class="t-label c-muted">Our Mission</span>
+          <h2 class="t-xl" style="margin: 24px 0 40px;">To restore weight to the act of living.</h2>
+          
+          <p class="t-body" style="margin-bottom: 32px;">
+            We create objects — both printed and sewn — that ask for your time and attention. 
+            In an age of endless scrolling, we offer garments that encourage lingering and books that reward slow reading.
+          </p>
+          
+          <p class="t-body">
+            Every garment is designed to be worn while reading. Every book is made to be held while wearing something that respects the body.
+          </p>
+        </div>
+        
+        <div style="background: var(--vellum); padding: 48px; border: 1px solid var(--border);">
+          <span class="t-label" style="color: var(--oxblood);">In Practice</span>
+          <ul style="margin-top: 20px; line-height: 2.1; font-family: 'Cormorant Garamond', serif; font-size: 17px;">
+            <li>Small-batch natural fibre garments</li>
+            <li>Hand-bound books on fine paper</li>
+            <li>No trend-driven collections</li>
+            <li>Objects built to age with dignity</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHY -->
+  <section class="philosophy-section" style="background: var(--vellum);">
+    <div class="container">
+      <div style="max-width: 760px; margin: 0 auto; text-align: center;">
+        <span class="t-label c-muted">Philosophy</span>
+        <h2 class="t-xl" style="margin: 32px 0 60px;">Tactile Solitude</h2>
+        <p class="t-pull" style="font-size: clamp(24px, 3.5vw, 42px); max-width: 680px; margin: 0 auto;">
+          “To read closely is to dress with absolute intention. Both are declarations that we refuse to rush.”
+        </p>
+        <p class="t-caption" style="margin-top: 48px; color: var(--ink-faded);">
+          — The Editors, Volume I
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISION / CLOSING -->
+  <section style="padding: 120px 0;">
+    <div class="container">
+      <div style="max-width: 680px;">
+        <h2 class="t-xl" style="margin-bottom: 48px;">Our Vision</h2>
+        <p class="t-body" style="font-size: 19px; line-height: 1.8;">
+          We envision a world where people once again own fewer, better things. Where a coat lasts decades and a book is passed down through generations. 
+          Where the objects we surround ourselves with carry memory, intention, and provenance.
+        </p>
+        
+        <div style="margin-top: 80px; padding-top: 40px; border-top: 1px solid var(--border);">
+          <span class="t-label c-gold">Better Books & Garments</span>
+          <p class="t-body-sm c-muted" style="margin-top: 12px;">
+            An imprint of The Daily Art Cult • London & Somerset
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER (same as index) -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <span class="footer-wordmark">Better Books & Garments</span>
+          <p class="t-body-sm" style="color:rgba(253,250,245,0.5); max-width:340px; line-height:1.7;">
+            A physical-lifestyle publication. Constructed for the preservation of unhurried reading and the appreciation of lasting garments.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4 class="t-label-md">The Daily Art Cult</h4>
+          <a href="https://thedailyartcult.lol" target="_blank" class="t-body-sm">Visit the House ↗</a>
+        </div>
+        <div class="footer-col">
+          <h4 class="t-label-md">Enquiries</h4>
+          <a href="mailto:imprint@betterbooksandgarments.com" class="t-body-sm">imprint@betterbooksandgarments.com</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="t-label" style="color:rgba(253,250,245,0.3)">© 2026 Better Books and Garments.</span>
+        <span class="t-label" style="color:rgba(253,250,245,0.3)">All considerations preserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Simple active nav (optional)
+    document.querySelectorAll('#nav a').forEach(link => {
+      if (link.href === window.location.href) link.classList.add('active');
+    });
+  </script>
+</body>
+</html>
